@@ -4,49 +4,59 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".VerifyActivity">
 
     <ImageView
         android:layout_width="200dp"
         android:layout_height="250dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        android:src="@drawable/mobile"
+        android:src="@drawable/opt"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toTopOf="@id/clMain"
         />
-
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
         android:id="@+id/clMain"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/tvMobileNNumber"
+            android:id="@+id/tvEnterOTP"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Enter Your Mobile Number"
+            android:text="Enter OTP"
             android:textAlignment="center"
             android:textColor="@color/black"
             android:textSize="25sp"
-            app:layout_constraintBottom_toTopOf="@id/etMobileNumber"
+            app:layout_constraintBottom_toTopOf="@id/tvFetchMobile"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toTopOf="@id/etOTP"
+            app:layout_constraintTop_toBottomOf="@id/tvEnterOTP"
+            android:id="@+id/tvFetchMobile"/>
+
         <EditText
-            android:id="@+id/etMobileNumber"
+            android:id="@+id/etOTP"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="25dp"
             android:layout_marginTop="5dp"
-            android:hint="9876543210"
+            android:hint="******"
             android:inputType="number"
-            android:maxLength="10"
+            android:maxLength="6"
             android:textColor="@color/black"
             android:textSize="25dp"
             app:layout_constraintBottom_toTopOf="@id/btnNext"
-            app:layout_constraintTop_toBottomOf="@id/tvMobileNNumber" />
+            app:layout_constraintTop_toBottomOf="@id/tvFetchMobile" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnNext"
@@ -54,9 +64,9 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="25dp"
             android:layout_marginTop="5dp"
-            android:text="NEXT"
+            android:text="Verify"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/etMobileNumber" />
+            app:layout_constraintTop_toBottomOf="@id/etOTP" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
